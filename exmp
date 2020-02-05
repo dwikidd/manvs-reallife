@@ -1,0 +1,14 @@
+public void showAct(View view) {
+    String button_text;
+    button_text = ((Button)view).getText().toString();
+    if(button_text.equals("Pesan Melalui Aplikasi")) {
+        Intent int1 = new Intent(MainActivity.this, MenuActivity.class);
+        startActivity(int1);
+    }
+    else if (button_text.equals("Pesan Lewat Telepon")) {
+        String phoneNumber = "081293206569";
+        Intent int2 = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNumber));
+        startActivity(int2);
+    }
+    }
+}
